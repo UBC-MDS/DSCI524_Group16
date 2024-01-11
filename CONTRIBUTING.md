@@ -40,10 +40,10 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up `pyknn_mlmodel` for local development.
+Ready to contribute? Here's how to set up `mds_pyknnclassifier` for local development.
 
-1. Download a copy of `pyknn_mlmodel` locally.
-2. Install `pyknn_mlmodel` using `poetry`:
+1. Download a copy of `mds_pyknnclassifier` locally.
+2. Install `mds_pyknnclassifier` using `poetry`:
 
     ```console
     $ poetry install
@@ -69,5 +69,5 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Code of Conduct
 
-Please note that the `pyknn_mlmodel` project is released with a
+Please note that the `mds_pyknnclassifier` project is released with a
 Code of Conduct. By contributing to this project you agree to abide by its terms.

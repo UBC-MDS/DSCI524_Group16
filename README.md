@@ -1,11 +1,11 @@
-# pyknn_mlmodel
+# mds_pyknnclassifier
 
 A k-Nearest Neighbors (KNN) classifier for Python.
 
 ## Installation
 
 ```bash
-$ pip install pyknn_mlmodel
+$ pip install mds_pyknnclassifier
 ```
 
 ## Usage
@@ -18,8 +18,8 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`pyknn_mlmodel` was created by Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao. It is licensed under the terms of the MIT license.
+`mds_pyknnclassifier` was created by Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao. It is licensed under the terms of the MIT license.
 
 ## Credits
 
-`pyknn_mlmodel` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`mds_pyknnclassifier` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).

@@ -4,4 +4,4 @@
 
 ## v0.1.0 (10/01/2024)
 
-- First release of `pyknn_mlmodel`!
+- First release of `mds_pyknnclassifier`!
