@@ -4,4 +4,4 @@
 
 ## v0.1.0 (10/01/2024)
 
-- First release of `mds_pyknnclassifier`!
+- First release of `pkg_pyknnclassifier`!

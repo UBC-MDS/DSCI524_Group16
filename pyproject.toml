@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "mds_pyknnclassifier"
+name = "pkg_pyknnclassifier"
 version = "0.1.0"
 description = "A k-Nearest Neighbors (KNN) classifier for Python."
-authors = ["Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao"]
+authors = [""Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao""]
 license = "MIT"
 readme = "README.md"
 

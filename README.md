@@ -1,11 +1,11 @@
-# mds_pyknnclassifier
+# pkg_pyknnclassifier
 
 A k-Nearest Neighbors (KNN) classifier for Python.
 
 ## Installation
 
 ```bash
-$ pip install mds_pyknnclassifier
+$ pip install pkg_pyknnclassifier
 ```
 
 ## Usage
@@ -18,8 +18,8 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`mds_pyknnclassifier` was created by Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao. It is licensed under the terms of the MIT license.
+`pkg_pyknnclassifier` was created by "Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao". It is licensed under the terms of the MIT license.
 
 ## Credits
 
-`mds_pyknnclassifier` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`pkg_pyknnclassifier` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).

@@ -3,7 +3,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = mds_pyknnclassifier
+SPHINXPROJ    = pkg_pyknnclassifier
 SOURCEDIR     = .
 BUILDDIR      = _build
 

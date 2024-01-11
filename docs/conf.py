@@ -6,9 +6,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"mds_pyknnclassifier"
-copyright = u"2024, Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao"
-author = u"Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao"
+project = u"pkg_pyknnclassifier"
+copyright = u"2024, "Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao""
+author = u""Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao""
 
 # -- General configuration ---------------------------------------------------
 

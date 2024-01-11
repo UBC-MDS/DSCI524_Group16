@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=mds_pyknnclassifier
+set SPHINXPROJ=pkg_pyknnclassifier
 
 if "%1" == "" goto help
 
