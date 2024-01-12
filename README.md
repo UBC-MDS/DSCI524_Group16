@@ -1,5 +1,7 @@
 # pkg_pyknnclassifier
 
+<img src="img/logo.png" width="300" alt="pkg_pyknnclassifier logo">
+
 A k-Nearest Neighbors (KNN) classifier for Python.
 
 ## Installation
