@@ -18,7 +18,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`pkg_pyknnclassifier` was created by "Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao". It is licensed under the terms of the MIT license.
+`pkg_pyknnclassifier` was created by "Bill Wan, Sho Inagaki, Shizhe Zhang, Weiran Zhao". It is licensed under the terms of the MIT license.
 
 ## Credits
 
