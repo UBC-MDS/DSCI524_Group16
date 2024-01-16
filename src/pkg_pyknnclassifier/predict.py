@@ -39,7 +39,7 @@ def predict(train_X, train_y, unlabel_df, pred_method, k):
     X_array = train_X.values
     unlabel_array = unlabel_df.values
     for data_point in unlabel_array:
-        neighbors_idxs = find_neighbors(X_array, unlabel_array, k)
+        neighbors_idxs = find_neighbors(X_array, data_point, k)
         neighbor_labels = train_y[neighbors_idxs]
         cnt = Counter(neighbor_labels)
 
