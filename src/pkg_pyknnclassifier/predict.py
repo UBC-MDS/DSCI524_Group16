@@ -2,6 +2,7 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
+
 def predict(train_X, train_y, unlabel_df, pred_method, k):
     """
     This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
