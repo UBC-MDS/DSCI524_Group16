@@ -23,8 +23,7 @@ def evaluate(y_true, y_pred, metric='accuracy'):
     """
     if metric == 'accuracy':
         correct_pred = sum((y_pred == y_true).astype(int))
-        return correct_pred/ len(y_true)
-    
+        return correct_pred/ len(y_true)  
     elif metric in ['precision', 'recall', 'f1']:
         true_pos, pred_pos, real_pos = 0, 0, 0
         precision, recall = 0, 0
@@ -52,3 +51,5 @@ def evaluate(y_true, y_pred, metric='accuracy'):
                 return 0
             else:
                 return 2*precision*recall/(precision+recall)
+    else:
+        raise ValueError(f"Invalid metric: {metric}. Possible values: 'accuracy', 'precision', 'recall', 'f1'")
