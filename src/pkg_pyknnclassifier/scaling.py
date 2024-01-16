@@ -1,14 +1,10 @@
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-from sklearn.impute import SimpleImputer
-import pandas as pd
-
-def scaling(df, impute_strategy, scale_method):
+def scaling(train_X, impute_strategy, scale_method):
     """ Apply imputation and scaling to the given data.
 
     Parameters
-    ----------    
-    df: pd.DataFrame 
-        The DataFrame to be preprocessed.
+    ----------
+    train_X: pd.DataFrame 
+        The features DataFrame to be preprocessed.
         
     impute_strategy: str
         The strategy for imputation, 'mean', 'median', 'most_frequent', or 'constant'.
@@ -17,20 +13,16 @@ def scaling(df, impute_strategy, scale_method):
         The scaling method, either 'StandardScaler' or 'MinMaxScaler'.
         
     Returns
-    ---------- 
+    ----------
     pd.DataFrame
-        The scaled DataFrame.
-
-    Examples
-    --------
-    >>> df_scaled = scaling(df, impute_strategy='mean', scale_method='MinMaxScaler')
+        The scaled features DataFrame.
     """
     
-    # Impute missing values
+    # Impute missing values in the features
     imputer = SimpleImputer(strategy=impute_strategy)
-    df_imputed = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
+    train_X_imputed = pd.DataFrame(imputer.fit_transform(train_X), columns=train_X.columns)
 
-    # Scale data
+    # Scale features data
     if scale_method == 'StandardScaler':
         scaler = StandardScaler()
     elif scale_method == 'MinMaxScaler':
@@ -38,7 +30,7 @@ def scaling(df, impute_strategy, scale_method):
     else:
         raise ValueError("scale_method must be 'StandardScaler' or 'MinMaxScaler'.")
 
-    # Apply scaling
-    df_scaled = pd.DataFrame(scaler.fit_transform(df_imputed), columns=df.columns)
+    # Apply scaling to the features
+    train_X_scaled = pd.DataFrame(scaler.fit_transform(train_X_imputed), columns=train_X.columns)
 
-    return df_scaled
+    return train_X_scaled
