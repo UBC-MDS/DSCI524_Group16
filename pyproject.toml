@@ -2,12 +2,15 @@
 name = "pkg_pyknnclassifier"
 version = "0.1.0"
 description = "A k-Nearest Neighbors (KNN) classifier for Python."
-authors = [""Bill Wan, Sho Inagaki, Vincent Zhang, Weiran Zhao""]
+authors = ["Bill Wan", "Sho Inagaki", "Vincent Zhang", "Weiran Zhao"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+numpy = "^1.26.3"
+pandas = "^2.1.4"
+scikit-learn = "^1.3.2"
 
 [tool.poetry.dev-dependencies]
 [tool.semantic_release]
