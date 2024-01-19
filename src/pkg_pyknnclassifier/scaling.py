@@ -1,3 +1,7 @@
+import pandas as pd
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
 def scaling(train_X, impute_strategy, scale_method):
     """ Apply imputation and scaling to the given data.
 
