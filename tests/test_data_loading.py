@@ -1,9 +1,12 @@
 from pkg_pyknnclassifier.data_loading import data_loading
+import pandas as pd
+
 
 def test_data_loading_invalid_path():
     """Test data loading with invalid file path."""
-    path = "non_existent_file.csv"
-    target = "target_column"
+    
+    path = "../data/toy_dataset.csv"
+    target = "Target"
     
     try:
         data_loading(path, target)
