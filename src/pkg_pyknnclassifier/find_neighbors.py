@@ -1,4 +1,5 @@
 from collections import Counter
+from pkg_pyknnclassifier.calculate_distance import calculate_distance
 import numpy as np
 import pandas as pd
 
