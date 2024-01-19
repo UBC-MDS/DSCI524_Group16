@@ -1,3 +1,5 @@
+import pandas as pd
+
 def data_loading(str_of_path, target_column):
     """ Load data from a file path and split into features and target.
 
