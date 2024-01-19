@@ -1,5 +1,5 @@
 from collections import Counter
-from find_neighbors import find_neighbors
+from pkg_pyknnclassifier.find_neighbors import find_neighbors
 import numpy as np
 import pandas as pd
 
@@ -48,6 +48,9 @@ def predict(train_X, train_y, unlabel_df, pred_method, k):
             label = cnt.most_common()[0][0]
             predictions.append(label)
         if pred_method == 'soft':
-            prob = cnt.most_common()[0][1] / (cnt.most_common()[0][1] + cnt.most_common()[1][1])
+            if k > 1:
+                prob = cnt.most_common()[0][1] / (cnt.most_common()[0][1] + cnt.most_common()[1][1])
+            else:
+                prob = 1
             predictions.append(prob)
     return np.array(predictions)
