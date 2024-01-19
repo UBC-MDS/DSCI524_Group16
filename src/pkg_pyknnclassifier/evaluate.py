@@ -22,7 +22,10 @@ def evaluate(y_true, y_pred, metric='accuracy'):
     print("Precision:", precision_result)
     """
     if metric == 'accuracy':
-        correct_pred = sum((y_pred == y_true).astype(int))
+        correct_pred = 0
+        for pred, true in zip(y_pred, y_true):
+            if pred == true:
+                correct_pred += 1
         return correct_pred/ len(y_true)  
     elif metric in ['precision', 'recall', 'f1']:
         true_pos, pred_pos, real_pos = 0, 0, 0
