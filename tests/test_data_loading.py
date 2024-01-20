@@ -1,7 +1,6 @@
 from pkg_pyknnclassifier.data_loading import data_loading
 import pandas as pd
 
-
 def test_data_loading_invalid_path():
     """Test data loading with invalid file path."""
     
