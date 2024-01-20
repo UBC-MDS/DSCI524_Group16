@@ -21,6 +21,12 @@ def evaluate(y_true, y_pred, metric='accuracy'):
     precision_result = evaluate_knn_manual(true_labels, predicted_labels, metric='precision')
     print("Precision:", precision_result)
     """
+    if len(y_true) == 0 and len(y_pred) == 0:
+        raise ValueError("Both predicted and true labels are empty.")
+
+    if len(y_true) != len(y_pred):
+        raise ValueError("Predicted and true labels must have the same length.")
+
     if metric == 'accuracy':
         correct_pred = 0
         for pred, true in zip(y_pred, y_true):

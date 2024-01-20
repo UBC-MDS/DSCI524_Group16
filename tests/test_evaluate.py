@@ -47,3 +47,39 @@ def test_precision_zero_denominator():
     predicted_labels = [1, 1]
     precision_result = evaluate(true_labels, predicted_labels, 'precision')
     assert precision_result == 0, "Precision should be 0 when the denominator is zero"
+
+def test_recall_zero_denominator():
+    """Test recall computation when the denominator is zero."""
+    true_labels = [0, 0]
+    predicted_labels = [1, 1]
+    recall_result = evaluate(true_labels, predicted_labels, 'recall')
+    assert recall_result == 0, "Recall should be 0 when the denominator is zero"
+
+def test_f1_zero_denominator():
+    """Test recall computation when the denominator is zero."""
+    true_labels = [0, 0]
+    predicted_labels = [1, 1]
+    recall_result = evaluate(true_labels, predicted_labels, 'f1')
+    assert recall_result == 0, "F1 should be 0 when the denominator is zero"
+
+def test_empty_labels():
+    """Test computation when both predicted and true labels are empty."""
+    true_labels = []
+    predicted_labels = []
+    try:
+        evaluate(true_labels, predicted_labels, 'accuracy')
+    except ValueError as e:
+        assert str(e) == "Both predicted and true labels are empty."
+    else:
+        assert False, "Expected ValueError not raised"
+
+def test_different_lengths():
+    """Test computation when predicted and true labels have different lengths."""
+    true_labels = [0, 1, 1, 0]
+    predicted_labels = [0, 1, 1, 0, 1]
+    try:
+        evaluate(true_labels, predicted_labels, 'accuracy')
+    except ValueError as e:
+        assert str(e) == "Predicted and true labels must have the same length."
+    else:
+        assert False, "Expected ValueError not raised"
