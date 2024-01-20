@@ -7,11 +7,13 @@ Our package, named "pkg_pyknnclassifier," is a comprehensive toolkit for k-Neare
 
 ## 📦 Functions
 This pacakge consists of five functions and are explained as below:
-- calculate_distance(obs_1, obs_2): This function calculates the Euclidean distance between two observations for the KNN model to find the similarity score.
-- predict(unlabel_df): This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
-- evaluate(y_true, y_pred, metric='accuracy'): This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score for a k-NN model based on true labels and predicted labels.
-- data_loading(str_of_path): This function takes in a file path and load the data
+- data_loading(str_of_path, target_column): This function loads data from a file path and split into features and target.
 - scaling(df, impute_strategy, scale_method): This function allows user to choose the method of data imputation and scaling, and apply to the data.
+- calculate_distance(obs_1, obs_2, method = "Euclidean"): This function calculates the Euclidean distance between two observations for the KNN model to find the similarity score.
+- find_neighbors(labeled_arraies, unlabeled_array, k): This function finds the indices of the 'k' nearest neighbors in a collection of labeled arrays to a given unlabeled array. 
+- predict(train_X, train_y, unlabel_df, pred_method, k): This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
+- evaluate(y_true, y_pred, metric='accuracy'): This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score for a k-NN model based on true labels and predicted labels.
+
 
 ## 🛠️ Installation
 To sucessfully run the following commands of installation, we would need `conda` and `poetry`, guide included in the link ([conda](https://docs.conda.io/projects/miniconda/en/latest/), [poetry](https://python-poetry.org/docs/))
