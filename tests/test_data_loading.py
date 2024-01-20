@@ -13,4 +13,17 @@ def test_data_loading_invalid_path():
         assert str(e) == f"File not found: {path}"
     else:
         assert False, "Expected ValueError not raised for invalid file path"
+        
+def test_data_loading_non_string_path():
+    """Test data loading with a non-string file path."""
+    
+    path = 123  # Use a non-string input, like an integer
+    target = "Target"
+    
+    try:
+        data_loading(path, target)
+    except ValueError as e:
+        assert str(e) == "Input must be a string representing the file path."
+    else:
+        assert False, "Expected ValueError not raised for non-string file path"
 
