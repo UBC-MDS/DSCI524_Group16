@@ -6,7 +6,7 @@
 Our package, named "pkg_pyknnclassifier," is a comprehensive toolkit for k-Nearest Neighbors (k-NN) modeling and evaluation. It offers a set of functions designed to facilitate various aspects of working with k-NN algorithms, from loading the data, calculating distances to making predictions and assessing model performance. We aim to simplify the process by providing essential functionalities for data manipulation, model evaluation, and scaling.
 
 ## 📦 Functions
-This pacakge consists of five functions and are explained as below:
+This pacakge consists of six functions and are explained as below:
 - data_loading(str_of_path, target_column): This function loads data from a file path and split into features and target.
 - scaling(df, impute_strategy, scale_method): This function allows user to choose the method of data imputation and scaling, and apply to the data.
 - calculate_distance(obs_1, obs_2, method = "Euclidean"): This function calculates the Euclidean distance between two observations for the KNN model to find the similarity score.
