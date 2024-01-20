@@ -26,4 +26,17 @@ def test_data_loading_non_string_path():
         assert str(e) == "Input must be a string representing the file path."
     else:
         assert False, "Expected ValueError not raised for non-string file path"
+        
+def test_data_loading_valid_input():
+    """Test data loading with valid file path and target column."""
+    
+    path = "./data/toy_dataset.csv" 
+    target = "Target"
+    
+    try:
+        features, target = data_loading(path, target)
+        assert isinstance(features, pd.DataFrame), "Features should be a DataFrame"
+        assert isinstance(target, pd.Series), "Target should be a Series"
+    except Exception as e:
+        assert False, f"Unexpected error occurred: {e}"
 
