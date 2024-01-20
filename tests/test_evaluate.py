@@ -10,6 +10,15 @@ def test_accuracy():
     tol = 1e-8
     assert np.abs(acc_real - acc_func) < tol , "wrong calculation of accuracy"
 
+def test_default_metric():
+    """Test computation when the metric parameter is not provided."""
+    true_labels = [0, 1, 1, 0]
+    predicted_labels = [0, 1, 1, 0]
+    acc_real = 1
+    acc_func = evaluate(true_labels, predicted_labels) 
+    tol = 1e-8
+    assert np.abs(acc_real - acc_func) < tol , "wrong calculation of accuracy"
+
 def test_precision():
     """Test precision computation."""
     precision_real = 3/5
@@ -59,8 +68,8 @@ def test_f1_zero_denominator():
     """Test recall computation when the denominator is zero."""
     true_labels = [0, 0]
     predicted_labels = [1, 1]
-    recall_result = evaluate(true_labels, predicted_labels, 'f1')
-    assert recall_result == 0, "F1 should be 0 when the denominator is zero"
+    f1_result = evaluate(true_labels, predicted_labels, 'f1')
+    assert f1_result == 0, "F1 should be 0 when the denominator is zero"
 
 def test_empty_labels():
     """Test computation when both predicted and true labels are empty."""
