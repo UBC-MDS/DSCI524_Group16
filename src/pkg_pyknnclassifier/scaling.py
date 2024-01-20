@@ -23,7 +23,11 @@ def scaling(train_X, impute_strategy, scale_method):
     """
     
     # Impute missing values in the features
-    imputer = SimpleImputer(strategy=impute_strategy)
+    if impute_strategy in ['mean', 'median', 'most_frequent', 'constant']:
+        imputer = SimpleImputer(strategy=impute_strategy)
+    else:
+        raise ValueError("impute_strategy must be 'mean', 'median', 'most_frequent', or 'constant'.")
+    
     train_X_imputed = pd.DataFrame(imputer.fit_transform(train_X), columns=train_X.columns)
 
     # Scale features data
