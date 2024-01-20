@@ -42,8 +42,18 @@ pytest --cov-branch --cov=pkg_pyknnclassifier
 ```
 
 ## Usage
+To successfully use our knn model to predict the target, please first ensure you have followed the instruction of installation, and then run the following line in a python notebook.
+```python
+from pkg_pyknnclassifier.data_loading import data_loading
+from pkg_pyknnclassifier.scaling import scaling
+from pkg_pyknnclassifier.predict import predict
 
-- TODO
+features, target = data_loading('data/toy_dataset.csv', 'Target')
+X_scaled = scaling(features, 'median', 'StandardScaler')
+pred = predict(X_scaled, target, X_scaled, 'hard', 3)
+accuracy_result = evaluate(target, pred, metric='accuracy')
+print("Accuracy:", accuracy_result)
+```
 
 ## 📚 Package Integration within the Python Ecosystem
 `pkg_pyknnclassifier`, while acknowledging the robustness and the capabilities of [scikit-learn's KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html), aims to offer a specialized and streamlined toolkit tailored explicitly for k-Nearest Neighbors classification tasks. As a lightweight and focused alternative, `pkg_pyknnclassifier` serves users who seek a concise package that offers calculating distances, making predictions, and evaluating k-NN models functions. While scikit-learn covers a broader spectrum of machine learning algorithms, `pkg_pyknnclassifier` provides a more specialized package, potentially appealing to those who prefer a tailored implementation of their k-NN workflows. 
