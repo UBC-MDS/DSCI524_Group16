@@ -21,8 +21,6 @@ def data_loading(str_of_path, target_column):
     >>> features, target = data_loading('path/to/your/data.csv', 'target_column_name')
     """
     
-    if not isinstance(str_of_path, str):
-        raise ValueError("Input must be a string representing the file path.")
     try:
         data = pd.read_csv(str_of_path)
     except FileNotFoundError:
