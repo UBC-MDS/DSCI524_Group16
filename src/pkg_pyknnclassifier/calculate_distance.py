@@ -1,5 +1,4 @@
 import numpy as np
-
 def calculate_distance(obs_1, obs_2, method = "Euclidean"):
     """
     This function calculates the Euclidean distance between two observations for the KNN model to find the similarity score.
@@ -23,17 +22,17 @@ def calculate_distance(obs_1, obs_2, method = "Euclidean"):
     dist = calculate_distance(obs_1, obs_2)
     print(f"Euclidean Distance between two observations is {dist}")
     """
-    obs_1 = np.array(obs_1)
-    obs_2 = np.array(obs_2)
 
-    if method == "Euclidean":
-        distance = (np.sum((obs_1 - obs_2)**2))**0.5
-        return distance
+
+
     
-    elif method == "Manhattan":
-        distance = np.sum(np.abs(obs_1 - obs_2))
-        return distance
+    if method == "Manhattan":
+        distance = np.sum(np.abs(np.array(obs_1) - np.array(obs_2)))
     
     elif method == "Chebyshev":
-        distance = np.max(np.abs(obs_1 - obs_2))
-        return distance
+        distance = np.max(np.abs(np.array(obs_1) - np.array(obs_2)))
+    
+    else:
+        distance = (np.sum((np.array(obs_1) - np.array(obs_2))**2))**0.5
+  
+    return distance

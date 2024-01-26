@@ -14,7 +14,11 @@ def test_invalid_impute_strategy():
     try:
         scaling(df, invalid_strategy, 'StandardScaler')
     except ValueError as e:
-        assert str(e) == "Can only use these strategies: ['mean', 'median', 'most_frequent', 'constant']"
+        expected_message = "impute_strategy must be 'mean', 'median', 'most_frequent', or 'constant'."
+        assert str(e) == expected_message, f"Expected message: '{expected_message}' but got '{str(e)}'"
+    else:
+        assert False, "Expected ValueError not raised for invalid impute strategy"
+
 
 def test_invalid_scale_method():
     """Test scaling with invalid scale method."""
