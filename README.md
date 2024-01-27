@@ -1,6 +1,6 @@
 # pkg_pyknnclassifier
 
-![pkg_pyknnclassifier logo](img/logo.png)
+<img src="img/logo.png" width="300" alt="pkg_pyknnclassifier logo">
 
 [![Documentation Status](https://readthedocs.org/projects/pkg-pyknnclassifier/badge/?version=latest)](https://pkg-pyknnclassifier.readthedocs.io/en/latest/?badge=latest)
 
