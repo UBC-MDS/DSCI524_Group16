@@ -1,6 +1,6 @@
 # pkg_pyknnclassifier
 
-![pkg_pyknnclassifier logo](img/logo_reduced.png)
+![Logo](https://raw.githubusercontent.com/UBC-MDS/Group16_knnmodel/main/img/logo_reduced.png)
 
 [![Documentation Status](https://readthedocs.org/projects/pkg-pyknnclassifier/badge/?version=latest)](https://pkg-pyknnclassifier.readthedocs.io/en/latest/?badge=latest)
 
