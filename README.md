@@ -8,27 +8,30 @@
 Our package, named "pkg_pyknnclassifier," is a comprehensive toolkit for k-Nearest Neighbors (k-NN) modeling and evaluation. It offers a set of functions designed to facilitate various aspects of working with k-NN algorithms, from loading the data, calculating distances to making predictions and assessing model performance. We aim to simplify the process by providing essential functionalities for data manipulation, model evaluation, and scaling.
 
 ## 📦 Functions
-This pacakge consists of six functions and are explained as below:
-- data_loading(str_of_path, target_column): This function loads data from a file path and split into features and target.
-- scaling(df, impute_strategy, scale_method): This function allows user to choose the method of data imputation and scaling, and apply to the data.
-- calculate_distance(obs_1, obs_2, method = "Euclidean"): This function calculates the Euclidean distance between two observations for the KNN model to find the similarity score.
-- find_neighbors(labeled_arraies, unlabeled_array, k): This function finds the indices of the 'k' nearest neighbors in a collection of labeled arrays to a given unlabeled array. 
-- predict(train_X, train_y, unlabel_df, pred_method, k): This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
-- evaluate(y_true, y_pred, metric='accuracy'): This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score for a k-NN model based on true labels and predicted labels.
-
+This pacakge consists of five functions and are explained as below:
+- `data_loading(str_of_path, target_column)`: This function loads data from a file path and split into features and target.
+- `scaling(df, impute_strategy, scale_method)`: This function allows user to choose the method of data imputation and scaling, and apply to the data.
+- `calculate_distance(obs_1, obs_2, method = "Euclidean")`: This function calculates the Euclidean distance between two observations for the KNN model to find the similarity score.
+- `find_neighbors(labeled_arraies, unlabeled_array, k)`: This function finds the indices of the 'k' nearest neighbors in a collection of labeled arrays to a given unlabeled array. 
+- `predict(train_X, train_y, unlabel_df, pred_method, k)`: This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
+- `evaluate(y_true, y_pred, metric='accuracy')`: This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score for a k-NN model based on true labels and predicted labels.
 
 ## 🛠️ Installation
 To sucessfully run the following commands of installation, we would need `conda` and `poetry`, guide included in the link ([conda](https://docs.conda.io/projects/miniconda/en/latest/), [poetry](https://python-poetry.org/docs/))
 
-1. Direct to the root of this repository
-2. Create a  virtual environment in Conda with Python by the following commands at terminal and activate it:
+1. Clone this repository
+``` bash
+$ git clone git@github.com:UBC-MDS/Group16_knnmodel.git
+```
+2. Direct to the root of this repository
+3. Create a  virtual environment in Conda with Python by the following commands at terminal and activate it:
 ```bash
 $ conda create --name pyknnclassifier python=3.11 -y
 ```
 ```bash
 $ conda activate pyknnclassifier
 ```
-3. Install this package via poetry, run the following command. 
+4. Install this package via poetry, run the following command. 
 ```bash
 $ poetry install
 ```
@@ -49,6 +52,7 @@ To successfully use our knn model to predict the target, please first ensure you
 from pkg_pyknnclassifier.data_loading import data_loading
 from pkg_pyknnclassifier.scaling import scaling
 from pkg_pyknnclassifier.predict import predict
+from pkg_pyknnclassifier.evaluate import evaluate
 
 features, target = data_loading('data/toy_dataset.csv', 'Target')
 X_scaled = scaling(features, 'median', 'StandardScaler')
