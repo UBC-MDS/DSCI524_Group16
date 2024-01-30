@@ -14,7 +14,6 @@ This pacakge consists of five functions and are explained as below:
 - `predict(train_X, train_y, unlabel_df, pred_method, k)`: This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
 - `evaluate(y_true, y_pred, metric='accuracy')`: This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score for a k-NN model based on true labels and predicted labels.
 
-
 ## 🛠️ Installation
 To sucessfully run the following commands of installation, we would need `conda` and `poetry`, guide included in the link ([conda](https://docs.conda.io/projects/miniconda/en/latest/), [poetry](https://python-poetry.org/docs/))
 
