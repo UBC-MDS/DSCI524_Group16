@@ -9,6 +9,9 @@ def calculate_distance(obs_1, obs_2, method = "Euclidean"):
         An array containing the features of the first observation.
     obs_2 : array
         An array containing the features of the second observation.
+    method : str, optional
+        The distance metric to use. Default is "Euclidean".
+        Possible values: "Euclidean", "Manhattan", "Chebyshev".
 
     Returns
     -------
@@ -22,9 +25,6 @@ def calculate_distance(obs_1, obs_2, method = "Euclidean"):
     dist = calculate_distance(obs_1, obs_2)
     print(f"Euclidean Distance between two observations is {dist}")
     """
-
-
-
     
     if method == "Manhattan":
         distance = np.sum(np.abs(np.array(obs_1) - np.array(obs_2)))
