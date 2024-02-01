@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def find_neighbors(labeled_arraies, unlabeled_array, k):
-        """
+    """
     Finds the indices of the 'k' nearest neighbors in a collection of labeled arrays 
     to a given unlabeled array. 
 
