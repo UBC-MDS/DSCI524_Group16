@@ -54,6 +54,14 @@ def find_neighbors(labeled_arraies, unlabeled_array, k):
 
     """
 
+    # Check if labeled_arrays and unlabeled_array have the same number of features (dimensions)
+    if labeled_arraies.shape[1] != len(unlabeled_array):
+        raise ValueError("labeled_arrays and unlabeled_array must have the same number of features.")
+    
+    # Check if k is positive and less than the number of labeled examples
+    if not (0 < k <= len(labeled_arraies)):
+        raise ValueError("k must be positive and less than or equal to the number of labeled examples.")
+
     distances = []
     # Calculate the distance between the unlabeled array and each labeled array
     for labeled_array in labeled_arraies:

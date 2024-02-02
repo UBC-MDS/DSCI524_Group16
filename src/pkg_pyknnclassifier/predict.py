@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def predict(train_X, train_y, unlabel_df, pred_method, k):
+def predict(train_X, train_y, unlabel_df, pred_method = "hard", k=3):
     """
     This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
 
@@ -36,6 +36,18 @@ def predict(train_X, train_y, unlabel_df, pred_method, k):
                        'B':[0.3, 0.2, 0.5]})
     predict(df)
     """
+
+    # Check if train_X and train_y have the same number of rows
+    if len(train_X) != len(train_y):
+        raise ValueError("train_X and train_y must have the same number of rows.")
+    
+    # Check if pred_method is either 'hard' or 'soft'
+    if pred_method not in ["hard", "soft"]:
+        raise ValueError("pred_method must be either 'hard' or 'soft'.")
+    
+    # Check if k is positive and less than the number of labeled examples
+    if not (0 < k <= len(train_X)):
+        raise ValueError("k must be positive and less than or equal to the number of labeled examples.")
 
     # Initializing list to track the predictions
     predictions = []

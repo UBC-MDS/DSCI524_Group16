@@ -40,3 +40,18 @@ def test_data_loading_valid_input():
     except Exception as e:
         assert False, f"Unexpected error occurred: {e}"
 
+
+def test_data_loading_nonexistent_target_column():
+    """Test data loading with non-existent target column."""
+    
+    
+    path = "./data/toy_dataset.csv" 
+    target = "invalidtarget"
+    
+    try:
+        features, target = data_loading(path, target)
+    except ValueError as e:
+        assert str(e) == f"Target column '{target}' not found in the DataFrame."
+    else:
+        assert False, "Expected ValueError not raised"
+
