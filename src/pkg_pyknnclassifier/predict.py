@@ -7,7 +7,7 @@ import pandas as pd
 def predict(train_X, train_y, unlabel_df, pred_method, k):
     """
     This function predicts the labels of the unlabled observations based on the similarity score calculated from Euclidean distance.
-    
+
     Parameters
     ----------
     train_X : pd.DataFrame
@@ -34,23 +34,31 @@ def predict(train_X, train_y, unlabel_df, pred_method, k):
     --------
     df = pd.DataFrame({'A':[0.5, 0.2, 0.4],
                        'B':[0.3, 0.2, 0.5]})
-    predict(df)                
+    predict(df)
     """
+
+    # Initializing list to track the predictions
     predictions = []
     X_array = train_X.values
     unlabel_array = unlabel_df.values
+
+    # Loop through each observation
     for data_point in unlabel_array:
         neighbors_idxs = find_neighbors(X_array, data_point, k)
         neighbor_labels = train_y[neighbors_idxs]
         cnt = Counter(neighbor_labels)
 
-        if pred_method == 'hard':
+        if pred_method == "hard":
             label = cnt.most_common()[0][0]
             predictions.append(label)
-        if pred_method == 'soft':
+        if pred_method == "soft":
             if k > 1:
-                prob = cnt.most_common()[0][1] / (cnt.most_common()[0][1] + cnt.most_common()[1][1])
+                prob = cnt.most_common()[0][1] / (
+                    cnt.most_common()[0][1] + cnt.most_common()[1][1]
+                )
             else:
                 prob = 1
             predictions.append(prob)
+
+    # Return the predicted labels
     return np.array(predictions)
