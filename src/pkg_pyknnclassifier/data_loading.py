@@ -37,9 +37,6 @@ def data_loading(str_of_path, target_column):
     except KeyError: 
         # Raise an error if the target_column is not found in the DataFrame
         raise ValueError(f"Target column '{target_column}' not found in the DataFrame.")
-    except Exception as e:
-        # Catch any other unexpected errors
-        raise ValueError(f"An unexpected error occurred: {str(e)}")
         
     # Return the features and target  
     return train_X, train_y
