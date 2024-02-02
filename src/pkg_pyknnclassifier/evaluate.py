@@ -1,3 +1,5 @@
+import numpy as np
+
 def evaluate(y_true, y_pred, metric='accuracy'):
     """
     This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score
@@ -21,18 +23,26 @@ def evaluate(y_true, y_pred, metric='accuracy'):
     precision_result = evaluate_knn_manual(true_labels, predicted_labels, metric='precision')
     print("Precision:", precision_result)
     """
+    # Check if both predicted and true labels are provided and are not empty
     if len(y_true) == 0 and len(y_pred) == 0:
         raise ValueError("Both predicted and true labels are empty.")
 
+    # Check if y_true and y_pred are of correct types
+    if not isinstance(y_true, (list, np.ndarray)) or not isinstance(y_pred, (list, np.ndarray)):
+        raise TypeError("y_true and y_pred must be lists or numpy arrays.")
+    
+    # Check if predicted and true labels have the same length
     if len(y_true) != len(y_pred):
         raise ValueError("Predicted and true labels must have the same length.")
-
+    
+    
     if metric == 'accuracy':
         correct_pred = 0
         for pred, true in zip(y_pred, y_true):
             if pred == true:
                 correct_pred += 1
         return correct_pred/ len(y_true)  
+    # Calculate precision, recall, and F1 score
     elif metric in ['precision', 'recall', 'f1']:
         true_pos, pred_pos, real_pos = 0, 0, 0
         precision, recall = 0, 0
@@ -61,4 +71,5 @@ def evaluate(y_true, y_pred, metric='accuracy'):
             else:
                 return 2*precision*recall/(precision+recall)
     else:
+        # Check if the metric parameter is valid
         raise ValueError(f"Invalid metric: {metric}. Possible values: 'accuracy', 'precision', 'recall', 'f1'")

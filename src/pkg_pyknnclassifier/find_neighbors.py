@@ -37,12 +37,30 @@ def find_neighbors(labeled_arraies, unlabeled_array, k):
     - The distance measurement used depends on the 'calculate_distance' function's definition.
     - This function assumes that all arrays (both labeled and unlabeled) are of 
       the same dimensionality and are compatible for distance calculations.
+
+    Example
+    -------
+    labeled_arrays = [
+        np.array([1, 2, 3]),
+        np.array([4, 5, 6]),
+        np.array([7, 8, 9])
+    ]
+    unlabeled_array = np.array([2, 3, 4])
+    k = 2
+
+    indices = find_neighbors(labeled_arrays, unlabeled_array, k)
+    print(indices)
+    # Output: array([0, 1])
+
     """
+        
     distances = []
+    # Calculate the distance between the unlabeled array and each labeled array
     for labeled_array in labeled_arraies:
         distance = calculate_distance(labeled_array, unlabeled_array)
         distances.append(distance)
     distances = np.array(distances)
+    # Get the indices of the k nearest neighbors    
     indices = np.argsort(distances)[:k]
 
     return indices

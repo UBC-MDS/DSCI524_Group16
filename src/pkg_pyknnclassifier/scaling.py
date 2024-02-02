@@ -20,6 +20,16 @@ def scaling(train_X, impute_strategy, scale_method):
     ----------
     pd.DataFrame
         The scaled features DataFrame.
+        
+    Examples
+    --------
+    train_data = pd.DataFrame({
+        'feature1': [1, 2, None, 4, 5],
+        'feature2': [3, 4, 5, None, 7]
+    })
+
+    imputed_scaled_data = scaling(train_data, impute_strategy='mean', scale_method='StandardScaler')
+    print(imputed_scaled_data)
     """
     
     # Impute missing values in the features

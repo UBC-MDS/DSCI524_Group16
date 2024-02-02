@@ -92,3 +92,25 @@ def test_different_lengths():
         assert str(e) == "Predicted and true labels must have the same length."
     else:
         assert False, "Expected ValueError not raised"
+
+def test_invalid_types():
+    """Test that the function raises a TypeError for invalid input types."""
+    invalid_true_labels = "invalid_type"
+    invalid_pred_labels = [1, 0, 1, 0, 1, 0, 1, 1]
+    try:
+        evaluate(invalid_true_labels, invalid_pred_labels, 'accuracy')
+    except TypeError as e:
+        assert str(e) == "y_true and y_pred must be lists or numpy arrays."
+    else:
+        assert False, "Expected TypeError not raised"
+
+def pred_invalid_types():
+    """Test that the function raises a TypeError for invalid input types."""
+    invalid_true_labels = [1, 0, 1, 0, 1, 0, 1, 1]
+    invalid_pred_labels = "invalid_type"
+    try:
+        evaluate(invalid_true_labels, invalid_pred_labels, 'accuracy')
+    except TypeError as e:
+        assert str(e) == "y_true and y_pred must be lists or numpy arrays."
+    else:
+        assert False, "Expected TypeError not raised"
