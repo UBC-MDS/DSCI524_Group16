@@ -1,10 +1,17 @@
-import numpy as np
+from collections import Counter
 from pkg_pyknnclassifier.calculate_distance import calculate_distance
+import numpy as np
+import pandas as pd
 
-def find_neighbors(labeled_arrays, unlabeled_array, k):
+
+def find_neighbors(labeled_arraies, unlabeled_array, k):
     """
     Finds the indices of the 'k' nearest neighbors in a collection of labeled arrays
     to a given unlabeled array.
+
+    This function computes the distance between each labeled array and the
+    unlabeled array using the 'calculate_distance' function. It then selects the 'k'
+    labeled arrays that are closest to the unlabeled array.
 
     Parameters
     ----------
@@ -24,21 +31,35 @@ def find_neighbors(labeled_arrays, unlabeled_array, k):
     -------
     indices : numpy.ndarray
         An array of indices of the 'k' nearest neighbors from the labeled_arrays.
+
+    Notes
+    -----
+    - The distance measurement used depends on the 'calculate_distance' function's definition.
+    - This function assumes that all arrays (both labeled and unlabeled) are of
+      the same dimensionality and are compatible for distance calculations.
+
+    Example
+    -------
+    labeled_arrays = [
+        np.array([1, 2, 3]),
+        np.array([4, 5, 6]),
+        np.array([7, 8, 9])
+    ]
+    unlabeled_array = np.array([2, 3, 4])
+    k = 2
+
+    indices = find_neighbors(labeled_arrays, unlabeled_array, k)
+    print(indices)
+    # Output: array([0, 1])
+
     """
 
-    # Check if 'k' is a positive integer and does not exceed the number of labeled arrays
-    if not isinstance(k, int) or k <= 0 or k > len(labeled_arrays):
-        raise ValueError("'k' must be a positive integer and should not exceed the number of labeled arrays.")
-
-
     distances = []
-
     # Calculate the distance between the unlabeled array and each labeled array
-    for labeled_array in labeled_arrays:
+    for labeled_array in labeled_arraies:
         distance = calculate_distance(labeled_array, unlabeled_array)
         distances.append(distance)
     distances = np.array(distances)
-
     # Get the indices of the k nearest neighbors
     indices = np.argsort(distances)[:k]
 
