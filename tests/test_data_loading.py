@@ -1,6 +1,7 @@
 from pkg_pyknnclassifier.data_loading import data_loading
 import pandas as pd
 
+
 def test_data_loading_invalid_path():
     """Test data loading with invalid file path."""
     
@@ -13,7 +14,8 @@ def test_data_loading_invalid_path():
         assert str(e) == f"File not found: {path}"
     else:
         assert False, "Expected ValueError not raised for invalid file path"
-        
+
+
 def test_data_loading_non_string_path():
     """Test data loading with a non-string file path."""
     
@@ -26,6 +28,7 @@ def test_data_loading_non_string_path():
         assert str(e) == "Input must be a string representing the file path."
     else:
         assert False, "Expected ValueError not raised for non-string file path"
+    
         
 def test_data_loading_valid_input():
     """Test data loading with valid file path and target column."""
@@ -39,4 +42,3 @@ def test_data_loading_valid_input():
         assert isinstance(target, pd.Series), "Target should be a Series"
     except Exception as e:
         assert False, f"Unexpected error occurred: {e}"
-
