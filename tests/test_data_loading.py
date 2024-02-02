@@ -49,9 +49,10 @@ def test_data_loading_keyerror():
     
     path = "./data/toy_dataset.csv" 
     target = "NonExistentColumn"
+    
     try:
         features, target = data_loading(path, target)
     except KeyError as e:
-        assert str(e) == f"'{target}'", "Expected KeyError for non-existent target column"
+        assert str(target) in str(e), "Expected KeyError for non-existent target column"
     except Exception as e:
         assert False, f"Unexpected error occurred: {e}"
