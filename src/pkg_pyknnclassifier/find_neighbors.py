@@ -25,12 +25,6 @@ def find_neighbors(labeled_arrays, unlabeled_array, k):
     indices : numpy.ndarray
         An array of indices of the 'k' nearest neighbors from the labeled_arrays.
     """
-
-    # Check if 'k' is a positive integer and does not exceed the number of labeled arrays
-    if not isinstance(k, int) or k <= 0 or k > len(labeled_arrays):
-        raise ValueError("'k' must be a positive integer and should not exceed the number of labeled arrays.")
-
-
     distances = []
 
     # Calculate the distance between the unlabeled array and each labeled array
