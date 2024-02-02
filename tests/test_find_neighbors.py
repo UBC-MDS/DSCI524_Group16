@@ -3,6 +3,7 @@ from pkg_pyknnclassifier.find_neighbors import find_neighbors
 from pkg_pyknnclassifier.calculate_distance import calculate_distance
 
 def test_find_neighbors():
+    """Test for the function correctness with the toy input"""
     labeled_arrays = np.array([
         [1, 2],
         [2, 3], 

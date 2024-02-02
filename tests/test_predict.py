@@ -10,17 +10,20 @@ expected = np.array(['class1', 'class2'])
 
 
 def test_hard_prediction():
+    """Test for making hard prediction"""
     pred_method = 'hard'
     predictions = predict(train_X, train_y, unlabel_df, pred_method, k)
     assert np.array_equal(predictions, expected), "Hard predictions are incorrect."
     
 def test_soft_prediction():
+    """Test for making soft prediction"""
     pred_method = 'soft'
     expected = np.array([1, 1])  
     predictions = predict(train_X, train_y, unlabel_df, pred_method, k)
     assert np.allclose(predictions, expected), "Soft predictions are incorrect."
 
 def test_soft_prediction_k_larger_than_one():
+    """Test to varify the function works for different k value"""
     k = 2
     pred_method = 'soft'
     expected = np.array([0.5, 0.5])  # Placeholder values, adjust as necessary
