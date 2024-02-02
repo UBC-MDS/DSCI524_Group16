@@ -4,18 +4,27 @@ import numpy as np
 
 def test_calculate_distance_check_dimensions():
     """Test if the two data points are of the same dimensions"""
-    obs_1 = [1, 2, 0.5, -2]
-    obs_2 = [0, 1 / 3, -3, 2.1, 3]
+    list1 = [1, 2, 3]
+    list2 = [2, 3]
 
     try:
-        calculate_distance(obs_1, obs_2)
+        calculate_distance(list1, list2)
     except ValueError as e:
-        assert str(e) == "Inputs must be of the same dimensions"
+        assert str(e) == "Failed length test"
     else:
-        assert (
-            False
-        ), "Expected ValueError not raised for inputs with different dimensions"
+        assert False, "Expected ValueError not raised"
 
+def test_calculate_distance_check_method():
+    """Test if the method is correct"""
+    obs_1 = [1, 2, 0.5, -2]
+    obs_2 = [0, 1 / 3, -3, 2.1]
+
+    try:
+        calculate_distance(obs_1, obs_2, method="invalid")
+    except ValueError as e:
+        assert str(e) == "invalid method"
+    else:
+        assert False, "Expected ValueError not raised"
 
 def test_calculate_distance_chebyshev():
     """Test if the functions calculates the chebyshev distance correctly"""
@@ -71,3 +80,27 @@ def test_calculate_distance_default():
     assert (
         calculated_default == expected_default
     ), "Default (Euclidean) distance calculation incorrect!"
+
+def test_calculate_distance_non_list_input():
+    """Test if the function handles non-list input correctly"""
+    obs_1 = "not a list"
+    obs_2 = [0, 1 / 3, -3, 2.1]
+
+    try:
+        calculate_distance(obs_1, obs_2)
+    except TypeError as e:
+        assert str(e) == "Input must be a list or numpy array"
+    else:
+        assert False, "Expected TypeError not raised"
+
+def test_calculate_distance_string_input():
+    """Test if the function handles non-list input correctly"""
+    obs_1 = [0, 1 / 3, -3, 2.1]
+    obs_2 = "not a list"
+
+    try:
+        calculate_distance(obs_1, obs_2)
+    except TypeError as e:
+        assert str(e) == "Input must be a list or numpy array"
+    else:
+        assert False, "Expected TypeError not raised"
