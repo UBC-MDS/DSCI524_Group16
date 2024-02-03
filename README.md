@@ -21,6 +21,20 @@ This package consists of six functions and explained as below:
 - `evaluate(y_true, y_pred, metric='accuracy')`: This function calculates evaluation metrics such as accuracy, precision, recall, and F1 score for a k-NN model based on true labels and predicted labels.
 
 ## 🛠️ Installation
+
+### Option 1 (For Users)
+_The package has been published to PYPI, we could use pip install_
+1. Create and activate a virtual environment using conda
+```bash
+$ conda create --name <env_name> pip -y
+$ conda activate <env_name>
+```
+2. Install the package using the command below
+```bash
+$ pip install pkg_pyknnclassifier
+```
+
+### Option 2 (For Developers)
 _To sucessfully run the following commands of installation, we would need `conda` and `poetry`, guide included in the link ([conda](https://docs.conda.io/projects/miniconda/en/latest/), [poetry](https://python-poetry.org/docs/))_
 
 1. Clone this repository
