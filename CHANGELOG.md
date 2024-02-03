@@ -2,6 +2,13 @@
 
 
 
+## v0.1.0 (2024-02-03)
+
+### Feature
+
+* feat: Update README.md for usages ([`083b5f5`](https://github.com/UBC-MDS/Group16_knnmodel/commit/083b5f52d0b0ac44e4b958bd5174ed08d8a2abb1))
+
+
 ## v0.0.4 (2024-02-03)
 
 ### Fix
