@@ -4,7 +4,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/pkg-pyknnclassifier/badge/?version=latest)](https://pkg-pyknnclassifier.readthedocs.io/en/latest/?badge=latest)
 
-## 📄 About
+## 📄 About 
 Our package, named "pkg_pyknnclassifier," is a comprehensive toolkit for k-Nearest Neighbors (k-NN) modeling and evaluation. It offers a set of functions designed to facilitate various aspects of working with k-NN algorithms, from loading the data, calculating distances to making predictions and assessing model performance. We aim to simplify the process by providing essential functionalities for data manipulation, model evaluation, and scaling.
 
 ## 📦 Functions
