@@ -31,3 +31,15 @@ def test_invalid_scale_method():
         scaling(df, 'mean', invalid_scale_method)
     except ValueError as e:
         assert str(e) == "scale_method must be 'StandardScaler' or 'MinMaxScaler'."
+
+
+def test_non_dataframe_input():
+    """Test scaling with non-DataFrame input. """
+    non_dataframe_input = [1, 2, 3]
+    try:
+        scaling(non_dataframe_input, 'mean', 'StandardScaler')
+    except ValueError as e:
+        expected_message = "train_X must be a pandas DataFrame."
+        assert str(e) == expected_message, f"Expected message: '{expected_message}' but got '{str(e)}'"
+    else:
+        assert False, "Expected ValueError not raised for non-DataFrame input"
