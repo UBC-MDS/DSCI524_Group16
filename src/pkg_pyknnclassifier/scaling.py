@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 
 def scaling(train_X, impute_strategy, scale_method):
-    """Apply imputation and scaling to the given data.
+    """Apply imputation and scaling to the given data. 
 
     Parameters
     ----------
@@ -22,6 +22,11 @@ def scaling(train_X, impute_strategy, scale_method):
     pd.DataFrame
         The scaled features DataFrame.
 
+    Raises
+    ------
+    ValueError
+        If input types or values are not valid.
+
     Examples
     --------
     train_data = pd.DataFrame({
@@ -32,6 +37,10 @@ def scaling(train_X, impute_strategy, scale_method):
     imputed_scaled_data = scaling(train_data, impute_strategy='mean', scale_method='StandardScaler')
     print(imputed_scaled_data)
     """
+
+    # Check if train_X is a DataFrame
+    if not isinstance(train_X, pd.DataFrame):
+        raise ValueError("train_X must be a pandas DataFrame.")
 
     # Impute missing values in the features
     if impute_strategy in ["mean", "median", "most_frequent", "constant"]:
@@ -59,3 +68,4 @@ def scaling(train_X, impute_strategy, scale_method):
     )
 
     return train_X_scaled
+
