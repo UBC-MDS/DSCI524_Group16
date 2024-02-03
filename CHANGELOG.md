@@ -2,6 +2,25 @@
 
 
 
+## v0.0.4 (2024-02-03)
+
+### Fix
+
+* fix: add input checks for scaling ([`3cddbca`](https://github.com/UBC-MDS/Group16_knnmodel/commit/3cddbca5b39a4e13ef7628d610394b6b189709bd))
+
+### Unknown
+
+* Merge pull request #80 from UBC-MDS/fix_scaling
+
+BREAKING CHANGE: Update on the scaling function ([`739378d`](https://github.com/UBC-MDS/Group16_knnmodel/commit/739378d8ad5bdde1f7fb72a8ee8af408bd0f0081))
+
+* Update README.md ([`110fba4`](https://github.com/UBC-MDS/Group16_knnmodel/commit/110fba4061349381972ca991c33ff98c95f3f933))
+
+* Update README.md ([`030400e`](https://github.com/UBC-MDS/Group16_knnmodel/commit/030400eb41834312e0e8dfcb998bf32fc806eac4))
+
+* Update README.md ([`0e3dc69`](https://github.com/UBC-MDS/Group16_knnmodel/commit/0e3dc69aa785d55ee1132f6d7ce123d9c8a9708d))
+
+
 ## v0.0.3 (2024-02-03)
 
 ### Fix
