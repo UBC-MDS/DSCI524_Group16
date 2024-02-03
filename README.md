@@ -3,6 +3,7 @@
 ![Logo](https://raw.githubusercontent.com/UBC-MDS/Group16_knnmodel/main/img/logo_reduced.png)
 
 [![Documentation Status](https://readthedocs.org/projects/pkg-pyknnclassifier/badge/?version=latest)](https://pkg-pyknnclassifier.readthedocs.io/en/latest/?badge=latest)
+[![ci-cd](https://github.com/UBC-MDS/Group16_knnmodel/actions/workflows/ci-cd.yml/badge.svg)
 
 ## 📄 About 
 Our package, named "pkg_pyknnclassifier," is a comprehensive toolkit for k-Nearest Neighbors (k-NN) modeling and evaluation. It offers a set of functions designed to facilitate various aspects of working with k-NN algorithms, from loading the data, calculating distances to making predictions and assessing model performance. We aim to simplify the process by providing essential functionalities for data manipulation, model evaluation, and scaling.
