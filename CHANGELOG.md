@@ -2,6 +2,13 @@
 
 
 
+## v0.0.3 (2024-02-03)
+
+### Fix
+
+* fix: Update README.md ([`fe47dcf`](https://github.com/UBC-MDS/Group16_knnmodel/commit/fe47dcf078428739893989dd83df05a41c601b0c))
+
+
 ## v0.0.2 (2024-02-03)
 
 ### Fix
