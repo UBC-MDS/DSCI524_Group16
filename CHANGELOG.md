@@ -2,6 +2,21 @@
 
 
 
+## v0.0.2 (2024-02-03)
+
+### Fix
+
+* fix: updating the readme ([`fbfddca`](https://github.com/UBC-MDS/Group16_knnmodel/commit/fbfddca2b831dfe53510c3317804197c50bd3f19))
+
+### Unknown
+
+* Merge pull request #79 from UBC-MDS/cicd
+
+add user token ([`451d1c1`](https://github.com/UBC-MDS/Group16_knnmodel/commit/451d1c1f1cea4afad8e99a3bf5a34557b514228a))
+
+* add user token ([`6628c22`](https://github.com/UBC-MDS/Group16_knnmodel/commit/6628c22789b19b0c506ed01a2d2c30a5772054e5))
+
+
 ## v0.0.1 (2024-02-02)
 
 ### Fix
